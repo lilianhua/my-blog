@@ -1,0 +1,286 @@
+/* ==========================================
+   自定义颜色变量（亮色模式默认值）
+   暗黑模式由 Layout.vue 通过 JS 动态切换
+   ========================================== */
+
+:root {
+  --blog-brand: #1a1a2e;
+  --blog-brand-hover: #2d2d4a;
+  --blog-bg: #ffffff;
+  --blog-bg-soft: #f8fafc;
+  --blog-bg-nav: rgba(255, 255, 255, 0.85);
+  --blog-text-1: #1a1a2e;
+  --blog-text-2: #475569;
+  --blog-text-3: #94a3b8;
+  --blog-text-4: #cbd5e1;
+  --blog-border: #f1f5f9;
+  --blog-border-hover: #e2e8f0;
+  --blog-tag-bg: #f0fdf4;
+  --blog-tag-color: #16a34a;
+  --blog-code-bg: #1e1e2e;
+  --blog-code-inline-bg: #f1f5f9;
+  --blog-code-inline-color: #1a1a2e;
+  --blog-img-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --blog-quote-bg: #f8fafc;
+  --blog-quote-text: #64748b;
+  --blog-quote-border: #e2e8f0;
+  --blog-table-border: #f1f5f9;
+  --blog-table-stripe: #fafafa;
+  --blog-btn-bg: #fff;
+  --blog-btn-border: #e2e8f0;
+  --blog-btn-color: #475569;
+  --blog-btn-hover-border: #94a3b8;
+  --blog-btn-hover-color: #1e293b;
+
+  --vp-c-brand-1: #1a1a2e;
+  --vp-c-brand-2: #2d2d4a;
+  --vp-c-brand-3: #4a4a6a;
+  --vp-c-brand-soft: rgba(26, 26, 46, 0.08);
+  --vp-code-copy-code-border-color: transparent;
+  --vp-code-copy-code-bg: transparent;
+  --vp-code-copy-code-hover-border-color: transparent;
+  --vp-code-copy-code-hover-bg: transparent;
+}
+
+/* ==========================================
+   隐藏 VitePress 默认导航栏、侧边栏、页脚
+   ========================================== */
+
+.VPNav,
+.VPSidebar,
+.VPFooter,
+.VPSkipLink {
+  display: none !important;
+}
+
+/* ==========================================
+   文章内容区（全部使用变量）
+   ========================================== */
+
+.vp-doc {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.vp-doc h1 {
+  font-weight: 800 !important;
+  font-size: 1.8rem !important;
+  letter-spacing: -0.02em;
+  color: var(--blog-text-1);
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--blog-border);
+}
+
+.vp-doc h2 {
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  letter-spacing: -0.01em;
+  color: var(--blog-text-1);
+  margin-top: 2.5rem;
+}
+
+.vp-doc h3 {
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
+  color: var(--blog-text-2);
+}
+
+.vp-doc p {
+  color: var(--blog-text-2);
+  line-height: 1.85;
+  font-size: 0.95rem;
+}
+
+.vp-doc a {
+  color: var(--blog-brand);
+  text-decoration-color: var(--blog-border-hover);
+  transition: all 0.2s;
+}
+
+.vp-doc a:hover {
+  text-decoration-color: var(--blog-brand);
+}
+
+.vp-doc ul, .vp-doc ol {
+  color: var(--blog-text-2);
+  padding-left: 1.5em;
+}
+
+.vp-doc hr {
+  border-color: var(--blog-border);
+}
+
+/* ==========================================
+   代码块
+   ========================================== */
+
+.vp-doc div[class*='language-'] {
+  border-radius: 10px !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: var(--blog-code-bg) !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 !important;
+}
+
+.vp-doc div[class*='language-'] > pre {
+  background: transparent !important;
+  padding: 20px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.vp-doc div[class*='language-'] .line,
+.vp-doc div[class*='language-'] code {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: #cdd6f4 !important;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Menlo', 'Consolas', monospace;
+}
+
+.vp-doc div[class*='language-'] > span.lang {
+  display: none !important;
+}
+
+button.copy,
+.vp-doc button.copy,
+.vp-doc div[class*='language-'] button.copy {
+  display: none !important;
+}
+
+.vp-doc :not(pre) > code {
+  background: var(--blog-code-inline-bg);
+  color: var(--blog-code-inline-color);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.88em;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Menlo', 'Consolas', monospace;
+}
+
+/* ==========================================
+   图片
+   ========================================== */
+
+.vp-doc img {
+  border-radius: 10px;
+  max-width: 100%;
+  box-shadow: var(--blog-img-shadow);
+}
+
+/* ==========================================
+   引用块
+   ========================================== */
+
+.vp-doc blockquote {
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  background: var(--blog-quote-bg);
+  border-left-color: var(--blog-quote-border);
+}
+
+.vp-doc blockquote p {
+  color: var(--blog-quote-text);
+}
+
+/* ==========================================
+   表格
+   ========================================== */
+
+.vp-doc table,
+.vp-doc table th,
+.vp-doc table td {
+  border-color: var(--blog-table-border);
+}
+
+.vp-doc table tr:nth-child(2n) {
+  background: var(--blog-table-stripe);
+}
+
+/* ==========================================
+   暗黑模式 — 覆盖 VitePress 默认变量 + 自定义变量
+   ========================================== */
+
+html.dark {
+  /* 覆盖 VitePress 核心背景色 */
+  --vp-c-bg: #121212;
+  --vp-c-bg-soft: #1a1a1a;
+  --vp-c-bg-mute: #1e1e1e;
+  --vp-c-bg-alt: #161616;
+
+  /* 覆盖 VitePress 文字色 */
+  --vp-c-text-1: #e0e0e0;
+  --vp-c-text-2: #a8a8a8;
+  --vp-c-text-3: #787878;
+
+  /* 覆盖 VitePress 边框色 */
+  --vp-c-border: #2a2a2a;
+  --vp-c-divider: #2a2a2a;
+
+  /* 覆盖 VitePress 品牌色（暗黑模式用绿色调） */
+  --vp-c-brand-1: #5eead4;
+  --vp-c-brand-2: #2dd4bf;
+  --vp-c-brand-3: #14b8a6;
+  --vp-c-brand-soft: rgba(94, 234, 212, 0.1);
+
+  /* 自定义博客变量 */
+  --blog-brand: #5eead4;
+  --blog-brand-hover: #2dd4bf;
+  --blog-bg: #121212;
+  --blog-bg-soft: #1a1a1a;
+  --blog-bg-nav: rgba(18, 18, 18, 0.85);
+  --blog-text-1: #e8e8e8;
+  --blog-text-2: #b0b0b0;
+  --blog-text-3: #808080;
+  --blog-text-4: #666666;
+  --blog-border: #2a2a2a;
+  --blog-border-hover: #3a3a3a;
+  --blog-tag-bg: rgba(94, 234, 212, 0.12);
+  --blog-tag-color: #5eead4;
+  --blog-code-bg: #111118;
+  --blog-code-inline-bg: #2a2a2a;
+  --blog-code-inline-color: #5eead4;
+  --blog-img-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  --blog-quote-bg: #1a1a1a;
+  --blog-quote-text: #909090;
+  --blog-quote-border: #333;
+  --blog-table-border: #2a2a2a;
+  --blog-table-stripe: rgba(255, 255, 255, 0.02);
+  --blog-btn-bg: #222;
+  --blog-btn-border: #3a3a3a;
+  --blog-btn-color: #b0b0b0;
+  --blog-btn-hover-border: #555;
+  --blog-btn-hover-color: #f0f0f0;
+
+  /* VitePress 代码块 */
+  --vp-code-color: #cdd6f4;
+  --vp-code-bg: #111118;
+  --vp-code-block-bg: #111118;
+
+  /* 显式设置暗色背景，覆盖浏览器默认白色 */
+  background-color: #121212;
+  color: #b0b0b0;
+}
+
+html.dark body,
+html.dark .site,
+html.dark .home,
+html.dark .article,
+html.dark .article-body,
+html.dark .site-content {
+  background-color: #121212;
+  color: #b0b0b0;
+}
+
+/* ==========================================
+   移动端适配
+   ========================================== */
+
+@media (max-width: 640px) {
+  .vp-doc h1 {
+    font-size: 1.5rem !important;
+  }
+  .vp-doc h2 {
+    font-size: 1.15rem !important;
+  }
+}
