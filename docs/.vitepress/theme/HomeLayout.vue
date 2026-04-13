@@ -4,10 +4,6 @@ import { useData, withBase } from 'vitepress'
 
 const { isDark } = useData()
 
-function getPostUrl(url: string) {
-  return withBase(url)
-}
-
 const { isDark } = useData()
 </script>
 
@@ -55,7 +51,7 @@ const { isDark } = useData()
           <a
             v-for="post in posts.slice(0, 6)"
             :key="post.url"
-            :href="getPostUrl(post.url)"
+            :href="withBase(post.url)"
             class="post-card"
           >
             <span class="post-tag">{{ post.frontmatter.tag }}</span>
