@@ -3,8 +3,6 @@ import { data as posts } from './posts.data.ts'
 import { useData, withBase } from 'vitepress'
 
 const { isDark } = useData()
-
-const { isDark } = useData()
 </script>
 
 <template>
