@@ -15,7 +15,7 @@ export default createContentLoader('blog/**/*.md', {
       .map(({ url, frontmatter }) => ({
         url,
         title: frontmatter.title,
-        date: frontmatter.date,
+        date: new Date(frontmatter.date).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' }),
         frontmatter,
       }))
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
